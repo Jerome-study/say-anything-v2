@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const marked = require('marked')
+const {marked} = require('marked')
 const slugify = require('slugify')
 const createDomPurify = require('dompurify')
 const { JSDOM } = require('jsdom')
@@ -41,7 +41,7 @@ articleSchema.pre('validate', function (next) {
     }
 
     if (this.markDown) {
-        this.sanitizedHtml = dompurify.sanitize(marked.parse(this.markDown))
+        this.sanitizedHtml = dompurify.sanitize(marked(this.markDown))
        
     }
     marked.use({
