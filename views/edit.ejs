@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Blog</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+            <div class="card header-edit">
+                <h1 class="title">Edit Article</h1>
+            </div>
+        </div>
+    </header>
+    
+    <section>
+        <div class="container">
+            <form action="/articles/edit/<%=articles.id %>?_method=PUT" method="post">
+            <div class="form-edit-new">
+                <label for="title">title</label>
+                <input type="text"  value="<%= articles.title %>" name="title">
+            </div>
+            <div class="form-edit-new">
+                <label for="description">Description</label>
+                <textarea name="description"><%= articles.description %></textarea>
+            </div>
+            <div class="form-edit-new">
+                <label for="markDown">markdown</label>
+                <textarea name="markDown"><%= articles.markDown %></textarea>
+            </div>
+            <button class="red"><a href="/articles">Cancel</a></button>
+            <input type="submit" value="Edit" class="btn green">
+        </form>
+        </div>
+    </section>
+    
+</body>
+</html>

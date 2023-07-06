@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Blog</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="card title-overflow">
+                <h1><%= articles.title %></h1>
+                <h3  class="date"><%= articles.createdAt.toLocaleDateString() %></h3>
+                <div>
+                    <div class="form-block">
+                        <button class="blue"><a href="/articles" >All Article</a></button>
+                    </div>
+                    <form action="/articles/edit/<%=articles.id %>" method="GET" class="form-block">
+                        <button type="submit" class="btn green ">Edit</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="card">
+                <h1>Description</h1>
+                <div class="description title-overflow">
+                    <div class="long-description"><%= articles.description %></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="card">
+                <h1>Markdown</h1>
+                <div class="description">
+                    <div class="markDown"><%- articles.sanitizedHtml %></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+</body>
+</html>

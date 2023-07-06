@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Blog</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+            <div class="card  header-edit">
+                <h1 class="title">Say Anything</h1>
+                <button class="green"><a href="/articles/new">New Article</a></button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section>
+        <div class="container">
+            <div class="articles">
+                <% articles.forEach(article => { %>
+                    <div class="card card-flex">
+                        <div>
+                            <h1><%= article.title %></h1>
+                            <h3 class="date"><%= article.createdAt.toLocaleDateString() %></h3>
+                            <div class="description">
+                                <h3><%= article.description %></h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <form>
+                                <button class="blue"><a href="/articles/<%= article.slug %>">Show More</a></button>
+                            </form>
+                            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="red">Delete</button>
+                            </form>
+                            <form action="/articles/edit/<%=article.id %>" method="GET">
+                                <button type="submit" class="green">Edit</button>
+                            </form>
+                        </div>
+                       
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+    
+   
+    
+</body>
+</html>

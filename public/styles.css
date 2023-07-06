@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: "Poppins";
+    font-weight: 400;
+}
+
+img,
+picture,
+svg,
+video {
+max-width: 100%;
+display: block;
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: #8d6e44;
+}
+
+.container {
+    width: 95%;
+    max-width: 80rem;
+    margin-inline: auto;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+
+.card h1{
+    font-size: 24px;
+}
+
+.date {
+    color: rgb(139, 139, 139);
+}
+
+.card .long-description {
+    font-size: 18px;
+}
+
+.flex {
+    display: flex;
+    gap: 1em;
+}
+
+.card {
+    background-color: white;
+    margin-bottom: 1em;
+    width: 100%;
+    margin-inline: auto;
+    padding: 1em;
+    border: 2px solid black;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button,.btn {
+    padding: .5em 1em;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+}
+
+
+.blue {
+    background-color: #000080;
+}
+
+.red {
+    background-color: #D22B2B;
+    color: white;
+}
+
+.red a {
+    color: white;
+}
+
+.blue a {
+    color: white;
+}
+
+.green {
+    background-color: rgb(0, 166, 0);
+    color: white;
+}
+
+.green a {
+    color: white;
+}
+
+.header-color {
+    background-color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header, section {
+    padding: 1em 0;
+}
+
+
+.form-edit-new label, .form-edit-new input, .form-edit-new textarea {
+    display: block;
+    width: 100%;
+}
+
+.form-edit-new textarea {
+    resize: none;
+    height: 150px;
+    overflow: auto;
+}
+
+.form-buttons {
+    margin-top: 1em;
+}
+
+.markDown {
+    width: 100%;
+    overflow-wrap: break-word;
+    overflow: auto;
+}
+
+.title-overflow .long-description {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.title-overflow h1 {
+    overflow-wrap: break-word;
+}
+
+
+
+.form-block {
+    display: inline-block;
+}
+
+
+.header-edit {
+    background-color: transparent;
+    border-inline: none;
+}
+
+
+
+.card-flex h1, .card-flex h3 {
+    overflow: hidden;
+    max-width: 24rem;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .articles {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1em;
+    }
+}
+
+
+
+@media (min-width: 1280px) {
+    .articles {
+        
+        grid-template-columns: repeat(3,1fr);
+
+    }
+}
+
+
