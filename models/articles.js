@@ -27,10 +27,10 @@ const articleSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    // sanitizedHtml: {
-    //     type: String,
-    //     required: true
-    // }
+    sanitizedHtml: {
+        type: String,
+        required: true
+    }
 })
 
 
@@ -40,14 +40,14 @@ articleSchema.pre('validate', function (next) {
         this.slug = slugify(this.title, { lower: true, strict: true})
     }
 
-    // if (this.markDown) {
-    //     this.sanitizedHtml = dompurify.sanitize(marked(this.markDown))
+    if (this.markDown) {
+        this.sanitizedHtml = dompurify.sanitize(marked(this.markDown))
        
-    // }
-    // marked.use({
-    //     mangle: false,
-    //     headerIds: false
-    // })
+    }
+    marked.use({
+        mangle: false,
+        headerIds: false
+    })
 
     
     next()
